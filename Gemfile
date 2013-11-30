@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
@@ -20,8 +20,10 @@ group :assets do
     gem 'uglifier', '>=1.0.3'
 end 
 
+gem 'newrelic_rpm'
 gem 'jquery-rails'
 gem 'faker'
+gem 'devise'
 
 
 # To use ActiveModel has_secure_password
