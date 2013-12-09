@@ -3,7 +3,7 @@ Bloccit::Application.routes.draw do
   devise_for :users
 
   resources :topics do
-    resource :posts, except: [:index]
+    resources :posts, except: [:index]
   end
 
 match "about" => 'welcome#about', via: :get

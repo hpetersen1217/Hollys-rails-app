@@ -11,7 +11,7 @@
             <div class="media">
                 <div class="media-body">
                     <h4 class="media-heading">
-                        <%= link_to post.title, [@topic, @post] %>
+                        <%= link_to post.title, [@topic, post] %>
                     </h4>
                     <small>
                         submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
@@ -21,7 +21,7 @@
             </div>
         <% end %>
     </div>
-    <div class="span4"
+    <div class="span4">
         <% if can? :create, Post %>
             <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-large btn-block' %>
         <% end %>
