@@ -23,6 +23,7 @@
                         <%= post.user.name %><br/>
                         <%= post.comments.count %> Comments
                     </small>
+                        <%= image_tag(post.image.thumb.url) if post.image? %>
                 </div>
             </div>
         <% end %>
