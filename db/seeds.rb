@@ -20,7 +20,7 @@ rand(4..10).times do
     u.save
 
     # For each user, after it's created, make 5 to 12 posts
-    rand(5..12).times do
+    rand(20..30).times do
         topic = topics.first
 
         p = u.posts.create(
