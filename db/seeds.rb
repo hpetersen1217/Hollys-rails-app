@@ -33,10 +33,10 @@ rand(4..10).times do
 
         # For each post, after it's created, make 3 to 7 comments
         rand(3..7).times do
-            p.comments.create(
+            u.comments.create(
+                post: p,
                 body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"))
         end
-
     end
 end
 
