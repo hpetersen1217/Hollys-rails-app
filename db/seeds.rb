@@ -28,7 +28,7 @@ rand(4..10).times do
             title: Faker::Lorem.words(rand(1..10)).join(" "),
             body: Faker::Lorem.paragraphs(rand(1..4)).join("\n"))
         p.update_attribute(:created_at, Time.now - rand(600..31536000))
-
+        p.update_rank
         topics.rotate!
 
         # For each post, after it's created, make 3 to 7 comments
