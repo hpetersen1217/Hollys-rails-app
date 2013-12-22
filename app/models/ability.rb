@@ -11,6 +11,7 @@ class Ability
         can :manage, Comment, :user_id => user.id
         can :manage, Favorite, user_id: user.id
         can :create, Vote
+        can :read, Topic
     end
     #Moderators can delete any post
     if user.role? :moderator
@@ -23,7 +24,8 @@ class Ability
         can :manage, :all
     end
 
-    can :read, :all
+    can :read, Topic, public: true
+    can :read, Post 
   end
 end
 
