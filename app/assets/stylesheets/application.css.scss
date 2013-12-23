@@ -17,3 +17,11 @@ p {text-align:justify;}
 .favorite {
   margin-top: 20px;
 }
+
+.voted {
+  opacity: 0.5;
+
+}
+
+@import "bootstrap-custom";
+@import "bootstrap";
