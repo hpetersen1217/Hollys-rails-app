@@ -63,4 +63,3 @@ class Topics::PostsController < ApplicationController
       end
     end
 end
-

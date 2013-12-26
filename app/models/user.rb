@@ -46,4 +46,17 @@ private
     self.role = 'member'
   end
 
+  def self.top_rated
+    self.select('users.*').
+    select('COUNT(DISTINCT comments.id) AS comments_count'). #count the comments made by the user
+    select('COUNT(DISTINCT posts.id) AS posts_count'). #count the posts made by the user
+    select('COUNT(DISTINCT comments.id) + COUNT(DISTINCT posts.id) AS rank'). #add the comment count to the post count and label the sum as "rank"
+    joins(:posts). #ties the posts table to the users table, via the user_id
+    joins(:comments). #ties the comments table to the users table, via the user_id
+    group('users.id'). #Instructs the database to group the results so that each user will be returned in a distinct row 
+    order('rank DESC') #Instructs the database to order the results in descending order, by the rank that we created in this query. (rank = comment count + post count)
+  end
+
+  ROLES = %w[member moderator admin]
+
 end
