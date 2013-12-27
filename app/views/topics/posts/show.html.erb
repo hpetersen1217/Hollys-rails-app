@@ -11,8 +11,7 @@
         <p><%= markdown @post.body %></p>  
            <p><%= image_tag(@post.image.url) if @post.image? %></p>
            <hr/>
-
-        <h2><%= @post.comments.count %> Comments</h2>
+            <h2 class='js-comments-count'><%= @post.comments.count %> Comments</h2>
         <%= render partial: 'comments/comment', collection: @post.comments %>
         <%# @post.comments.each do |comment| %>
             <%#= render partial 'comments/comment', locals: {comment: comment}
